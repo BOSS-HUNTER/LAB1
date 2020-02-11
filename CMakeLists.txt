@@ -29,6 +29,7 @@ hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 hunter_add_package(Boost COMPONENTS)
 find_package(Boost CONFIG REQUIRED)
+find_package(Threads)
 
 add_library(
   ${PROJECT_NAME}
@@ -70,10 +71,10 @@ find_library(
 )
 target_link_libraries(
   tests
-  ${CMAKE_THREAD_LIBS_INIT}
-  ${GTEST_LOCAL_LIB}
-  ${GTEST_LOCAL_LIB_MAIN}
-  ${PROJECT_NAME}
+        ${GTEST_LOCAL_LIB}
+        ${GTEST_LOCAL_LIB_MAIN}
+        ${CMAKE_THREAD_LIBS_INIT}
+        ${PROJECT_NAME}
 )
 
 enable_testing()
