@@ -6,7 +6,6 @@ services:
 
 env:
   - ID="toliak"
-  #- ID = "timenergy"
   - IMG="bootstrap-cpp"
 
 before_script:
