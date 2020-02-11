@@ -6,13 +6,12 @@ services:
 
 before_script:
   - docker pull toliak/bootstrap-cpp
-  - docker ps -a
+  - docker chmod 777 -R ./scripts
 
 jobs:
   include:
     - name: "tests"
       script:
-        - docker chmod 777 -R ./scripts
         - docker run -t -v $(pwd):/opt/builder/ --entrypoint ./scripts/tests.sh toliak/bootstrap-cpp
     - name: "coverage"
       script:
