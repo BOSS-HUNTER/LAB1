@@ -5,9 +5,9 @@ services:
   - docker
 
 env:
-  - ID = "toliak"
+  - ID="toliak"
   #- ID = "timenergy"
-  - IMG = "bootstrap-cpp"
+  - IMG="bootstrap-cpp"
 
 before_script:
   - echo $ID
